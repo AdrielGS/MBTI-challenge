@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --delay 2500ms --watch ./",
     "test": "",
-    "lint": "eslint config modules"
+    "lint": "eslint index.js config modules"
   },
   "author": "",
   "license": "ISC",

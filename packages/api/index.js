@@ -1,9 +1,7 @@
 require('dotenv').config()
 require('./config/db')
 
-
 const Hapi = require('@hapi/hapi')
-// const { plugin: MongoDB } = require('./plugins/mongodb')
 const Routes = require('./config/routes')
 
 // Create a server with a host and port
@@ -19,13 +17,13 @@ const server = Hapi.server({
     }
   }
 })
-server.route(Routes);
+
+// Loading routes
+server.route(Routes)
 
 server.ext('onPreResponse', (request, h) => {
   const response = request.response
-  // if (!response.isBoom) {
-  //   return h.continue
-  // }
+
   // There is a validation error
   if (response.isJoi) {
     const errors = []
@@ -40,20 +38,13 @@ server.ext('onPreResponse', (request, h) => {
     return res
   }
 
-  // There is an unhandled exception
-  // if (response.isBoom) {
-  //   console.log(response)
-  // }
   return h.continue
-});
+})
 
-const start =  async () => {
+const start = async () => {
   try {
-    // await server.register(MongoDB)
-    // await server.register(Routes)
     await server.start()
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err)
     process.exit(1)
   }
