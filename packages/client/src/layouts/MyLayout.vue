@@ -1,17 +1,12 @@
-<template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-toolbar-title>
-          MBTI test
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-header>
+<template lang="pug">
 
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+  q-layout(view="lHh Lpr lFf")
+    q-header(elevated)
+      q-toolbar
+        q-toolbar-title MBTI test
+
+    q-page-container
+      router-view
 </template>
 
 <script>
