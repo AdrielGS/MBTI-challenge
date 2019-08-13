@@ -3,7 +3,8 @@
   q-layout(view="lHh Lpr lFf")
     q-header(elevated)
       q-toolbar
-        q-toolbar-title MBTI test
+        q-toolbar-title
+          router-link.home(to='/') MBTI Test
 
     q-page-container
       router-view
@@ -12,11 +13,12 @@
 <script>
 
 export default {
-  name: 'MyLayout',
-  data () {},
-  methods: {}
+  name: 'MyLayout'
 }
 </script>
 
-<style>
+<style lang='stylus'>
+  .home
+    text-decoration none
+    color white
 </style>

@@ -1,5 +1,7 @@
 const questions = require('../modules/questions/handlers')
 const user = require('../modules/user/handlers')
+const dimensions = require('../modules/dimensions/handlers')
+
 const userValidation = require('../modules/user/validation')
 
 const routes = [
@@ -14,6 +16,11 @@ const routes = [
     method: 'GET',
     path: '/questions',
     handler: (req, h) => questions.getAll(req, h)
+  },
+  {
+    method: 'GET',
+    path: '/dimensions',
+    handler: (req, h) => dimensions.getAll(req, h)
   },
   {
     method: 'POST',

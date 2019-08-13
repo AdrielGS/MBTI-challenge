@@ -1,0 +1,51 @@
+/* 1 */
+{
+    "name" : "EI",
+    "left" : {
+        "name" : "Extraversion",
+        "symbol" : "E"
+    },
+    "right" : {
+        "name" : "Introversion",
+        "symbol" : "I"
+    }
+}
+
+/* 2 */
+{
+    "name" : "SN",
+    "left" : {
+        "name" : "Sensing",
+        "symbol" : "S"
+    },
+    "right" : {
+        "name" : "Intuition",
+        "symbol" : "N"
+    }
+}
+
+/* 3 */
+{
+    "name" : "TF",
+    "left" : {
+        "name" : "Thinking",
+        "symbol" : "T"
+    },
+    "right" : {
+        "name" : "Feeling",
+        "symbol" : "F"
+    }
+}
+
+/* 4 */
+{
+    "name" : "JP",
+    "left" : {
+        "name" : "Judging",
+        "symbol" : "J"
+    },
+    "right" : {
+        "name" : "Perceiving",
+        "symbol" : "P"
+    }
+}

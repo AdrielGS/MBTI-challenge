@@ -1,3 +1,4 @@
+require('dotenv').config()
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
@@ -6,7 +7,8 @@ module.exports = function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     boot: [
-      'axios'
+      'axios',
+      'vuelidate'
     ],
 
     css: [
@@ -44,7 +46,12 @@ module.exports = function (ctx) {
         'QList',
         'QItem',
         'QItemSection',
-        'QItemLabel'
+        'QItemLabel',
+        'QCard',
+        'QCardSection',
+        'QRadio',
+        'QInput',
+        'QLinearProgress'
       ],
 
       directives: [
@@ -60,6 +67,9 @@ module.exports = function (ctx) {
     supportIE: false,
 
     build: {
+      env: {
+        API_URI: process.env.API_URI
+      },
       scopeHoisting: true,
       // vueRouterMode: 'history',
       // vueCompiler: true,

@@ -20,14 +20,14 @@ const setResult = async (req, h) => {
     result.push(
       {
         name: dimension.name,
-        result: total <= 0 ? dimension.left : dimension.right
+        result: total <= 0 ? dimension.left.symbol : dimension.right.symbol
       }
     )
   })
 
   let user = await User.findOne({ email: email })
 
-  if (user) {
+  if (user) { 
     user.questions = questions
     user.dimension = result
   } else {
@@ -42,7 +42,7 @@ const setResult = async (req, h) => {
 
   const response = {
     email: user.email,
-    result: user.dimension.map((d) => d.result).join('')
+    result: user.dimension
   }
 
   return h.response(response)
